@@ -18,7 +18,7 @@
     "url" : "http://swagger.io"
   },
   "servers" : [ {
-    "url" : "https://virtserver.swaggerhub.com/SmartBear-CC/AWS/1.0.0",
+    "url" : "https://virtserver.swaggerhub.com/MariaTest7/Test_API/1.0.0",
     "description" : "SwaggerHub API Auto Mocking"
   }, {
     "url" : "https://petstore.swagger.io/v2"
@@ -112,7 +112,7 @@
                 "schema" : {
                   "type" : "array",
                   "items" : {
-                    "$ref" : "#/components/schemas/Pet"
+                    "$ref" : "#/components/schemas/inline_response_200"
                   }
                 }
               },
@@ -252,7 +252,7 @@
           "content" : {
             "application/x-www-form-urlencoded" : {
               "schema" : {
-                "$ref" : "#/components/schemas/body"
+                "$ref" : "#/components/schemas/pet_petId_body"
               }
             }
           }
@@ -323,7 +323,7 @@
         } ],
         "requestBody" : {
           "content" : {
-            "application/octet-stream" : {
+            "multipart/formdata" : {
               "schema" : {
                 "type" : "string",
                 "format" : "binary"
@@ -727,11 +727,11 @@
       "Order" : {
         "type" : "object",
         "properties" : {
-          "id" : {
+          "id 4" : {
             "type" : "integer",
             "format" : "int64"
           },
-          "petId" : {
+          "petd" : {
             "type" : "integer",
             "format" : "int64"
           },
@@ -743,7 +743,7 @@
             "type" : "string",
             "format" : "date-time"
           },
-          "status" : {
+          "stat_us" : {
             "type" : "string",
             "description" : "Order Status",
             "enum" : [ "placed", "approved", "delivered" ]
@@ -775,23 +775,23 @@
       "User" : {
         "type" : "object",
         "properties" : {
-          "id" : {
+          "id_3" : {
             "type" : "integer",
             "format" : "int64"
           },
-          "username" : {
+          "5656" : {
             "type" : "string"
           },
-          "firstName" : {
+          "firstName 3" : {
             "type" : "string"
           },
-          "lastName" : {
+          "lastName__2" : {
             "type" : "string"
           },
           "email" : {
             "type" : "string"
           },
-          "password" : {
+          "password_hgdj_wretd" : {
             "type" : "string"
           },
           "phone" : {
@@ -830,7 +830,7 @@
             "type" : "integer",
             "format" : "int64"
           },
-          "category" : {
+          "cate gory" : {
             "$ref" : "#/components/schemas/Category"
           },
           "name" : {
@@ -882,7 +882,52 @@
           }
         }
       },
-      "body" : {
+      "inline_response_200" : {
+        "required" : [ "name", "photoUrls" ],
+        "type" : "object",
+        "properties" : {
+          "path_prop" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "cate gory" : {
+            "$ref" : "#/components/schemas/Category"
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "doggie"
+          },
+          "photoUrls" : {
+            "type" : "array",
+            "xml" : {
+              "name" : "photoUrl",
+              "wrapped" : true
+            },
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "tags" : {
+            "type" : "array",
+            "xml" : {
+              "name" : "tag",
+              "wrapped" : true
+            },
+            "items" : {
+              "$ref" : "#/components/schemas/Tag"
+            }
+          },
+          "status" : {
+            "type" : "string",
+            "description" : "pet status in the store",
+            "enum" : [ "available", "pending", "sold" ]
+          }
+        },
+        "xml" : {
+          "name" : "Pet"
+        }
+      },
+      "pet_petId_body" : {
         "type" : "object",
         "properties" : {
           "name" : {
@@ -947,6 +992,5 @@
         "in" : "header"
       }
     }
-  },
-  "x-aws-api-id" : "null"
+  }
 }
